@@ -17,31 +17,54 @@
         background-color: #000;
       }
 
+      .video-container {
+        position: relative;
+        width: 100%;
+      }
+
       video {
         width: 100%;
         height: auto;
         display: block;
         background-color: #000;
-        border-bottom: 1px dotted #f0f;
+      }
+
+      .video-container::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100px;
+        background: linear-gradient(to bottom, transparent, #000);
+        pointer-events: none;
       }
 
       .footer-text {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
         text-align: right;
         font-family: monospace;
         font-size: 13px;
         color: #f0f;
         padding: 10px;
+        border-top: 2px dotted #f0f;
       }
     </style>
   </head>
   <body>
-    <video
-      src="bg-vid.mov"
-      autoplay
-      loop
-      muted
-      playsinline
-    ></video>
+    <div class="video-container">
+      <video
+        src="bg-vid.mov"
+        autoplay
+        loop
+        muted
+        playsinline
+      ></video>
+    </div>
     <div class="footer-text">founders@provocative.earth</div>
   </body>
 </html>
